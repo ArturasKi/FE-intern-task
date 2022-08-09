@@ -12,6 +12,6 @@ fetch('https://picsum.photos/v2/list')
                     <img src="${values.download_url}" alt="img">
                 </div>`
     })
-    document.getElementById('cards').innerHTML=data1;
+    document.getElementById('cards').innerHTML = data1;
 })
 .catch(error => console.log('ERROR'))
