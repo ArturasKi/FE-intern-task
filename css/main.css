@@ -76,21 +76,41 @@ main {
 }
 
 .editor-container {
-    margin: 0 200px;
-    height: 10%;
-    padding: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 0 10%;
+    height: 10%;
+    padding: 20px;
     background-color: palevioletred;
     border-radius: 20px;
 }
 
-input {
-    text-align: center;
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    /* width: 100%; */
+    height: 5px;
+    background: #d3d3d3;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+
+.inp-checkbox {
+    height: 20px;
+    width: 20px;
 }
 
 img {
     max-width: 100%;
     height: auto;
+    filter: blur(0px)
   }
