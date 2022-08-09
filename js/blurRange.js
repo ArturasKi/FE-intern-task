@@ -1,7 +1,7 @@
 // Get slider
 let slider = document.getElementById('slider');
 let output = document.getElementById('value');
-let img = document.getElementById('img');
+let img = document.getElementById('imgBox');
 
 // input sliderio 'value=0' yra prilyginamas span tag'e užduotai reikšmei (0);
 output.innerHTML = slider.value;

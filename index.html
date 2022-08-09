@@ -11,19 +11,13 @@
     <main>
         <section class="leftside">
             <div class="left-col">
-                <div id="cards">
-                    <!-- <div class="card">
-                        <h4 class="author">author</h4>
-                        <span class="height">height x width</span>
-                        <img src="https://images.unsplash.com/flagged/1/apple-gear-looking-pretty.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="img">
-                    </div> -->
-                </div>
+                <div id="cards"></div>
             </div>
         </section>
         <section class="rightside">
             <div class="right-col">
                 <div class="photo-container">
-                    <img class="img-gray" id="imgBox" src="./img/idea1.png" alt="#" onclick="pickPhoto(this)">
+                    <img class="img-gray" id="imgBox" src="https://picsum.photos/id/0/5616/3744" alt="#">
                 </div>
                 <div class="filter-container">
                     <div>
@@ -39,15 +33,9 @@
             </div>
         </section>
     </main>
-    <!-- <div id="root"></div> -->
     <script src="./js/checkbox.js"></script>
     <script src="./js/blurRange.js"></script>
     <script src="./js/fetch.js"></script>
-    <script>
-        function pickPhoto(smallImg) {
-            let fullImg = document.getElementById('imgBox');
-            fullImg.src = smallImg.src;
-        }
-    </script>
+    <script src="./js/photoPicker.js"></script>
 </body>
 </html>

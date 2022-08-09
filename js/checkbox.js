@@ -1,12 +1,12 @@
 // Get checkbox
 let checkboxGray = document.getElementById('check');
 // Get image
-let image = document.getElementById('img');
+let photo = document.getElementById('imgBox');
 
 checkboxGray.addEventListener("change", () => {
     if(checkboxGray.checked) {
-        image.style.filter = 'grayscale(100%)';
+        photo.style.filter = 'grayscale(100%)';
     } else {
-        image.style.filter = 'initial';
+        photo.style.filter = 'initial';
     }
 });

@@ -1,7 +1,4 @@
-let photoPicker = document.getElementById('imgBox');
-
-console.log(photoPicker);
-
-photoPicker.addEventListener("onclick", (e) => {
-    console.log(e);
-});
+function pickPhoto(smallImg) {
+    let fullImg = document.getElementById('imgBox');
+    fullImg.src = smallImg.src;
+}
