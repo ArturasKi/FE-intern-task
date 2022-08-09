@@ -7,7 +7,7 @@ body * {
 }
 
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Cambria', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: #505764;
     height: 100vh;
 }
@@ -21,7 +21,7 @@ main {
     position: fixed;
     top: 0;
     left: 0;
-    width: 20%;
+    width: 18%;
     height: 100%;
     float: left;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -30,28 +30,32 @@ main {
     overflow-y: scroll;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
-.card img {
-    height: 200px;
-    width: 200px;
-}
-
 .rightside {
     position: fixed;
     top: 0;
     right: 0;
     background-color: #505764;
     height: 100%;
-    width: 80%;
+    width: 82%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px #505764;
+    height: 200px;
+    width: 200px;
+    margin: 0 10px 20px 10px;
+    cursor: pointer;
+}
+
+.card img {
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -59,12 +63,12 @@ main {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgb(215, 241, 252);
+    background: #d3d3d3;
     border-radius: 100vw;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #58b958;
+    background: #04AA6D;
     border-radius: 100vw;
 } 
 
@@ -105,6 +109,7 @@ main {
     -webkit-appearance: none;
     appearance: none;
     /* width: 100%; */
+    margin-top: 6px;
     height: 5px;
     background: #d3d3d3;
 }
@@ -124,16 +129,13 @@ main {
     width: 20px;
 }
 
-.check {
-    background: #04AA6D;
-}
-
-#check:checked, .img-gray::after {
-    filter: grayscale(100%);
-}
-
 img {
     max-width: 100%;
     height: auto;
-    filter: blur(0px)
   }
+
+label, span {
+    font-style: italic;
+    font-weight: 900;
+    margin: 10px;
+}
