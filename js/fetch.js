@@ -4,8 +4,14 @@ fetch('https://picsum.photos/v2/list')
     let data1 = '';
     data.map((values) => {
         data1 += `<div class="card">
-                    <img src="${values.download_url}" alt="img">
-                </div>`
+                    <img src="${values.download_url}" alt="img" onclick="pickPhoto(this)">
+                </div>
+                <script>
+                    function pickPhoto(smallImg) {
+                        let fullImg = document.getElementById('imgBox');
+                        fullImg.src = smallImg.src;
+                    }
+                </script>`
     })
     document.getElementById('cards').innerHTML = data1;
 })

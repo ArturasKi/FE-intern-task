@@ -23,7 +23,7 @@
         <section class="rightside">
             <div class="right-col">
                 <div class="photo-container">
-                    <img class="img-gray" id="img" src="./img/idea1.png" alt="#">
+                    <img class="img-gray" id="imgBox" src="./img/idea1.png" alt="#" onclick="pickPhoto(this)">
                 </div>
                 <div class="filter-container">
                     <div>
@@ -43,5 +43,11 @@
     <script src="./js/checkbox.js"></script>
     <script src="./js/blurRange.js"></script>
     <script src="./js/fetch.js"></script>
+    <script>
+        function pickPhoto(smallImg) {
+            let fullImg = document.getElementById('imgBox');
+            fullImg.src = smallImg.src;
+        }
+    </script>
 </body>
 </html>
