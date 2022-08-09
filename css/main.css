@@ -68,10 +68,11 @@ main {
 .photo-container {
     display: flex;
     justify-content: center;
-    padding: 30px;
+    padding: 40px;
     height: 87%;
     margin-bottom: 20px;
     background-color: palevioletred;
+    border-radius: 20px;
 }
 
 .editor-container {
@@ -82,6 +83,7 @@ main {
     justify-content: space-around;
     align-items: center;
     background-color: palevioletred;
+    border-radius: 20px;
 }
 
 input {
@@ -91,5 +93,4 @@ input {
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 20px;
   }
