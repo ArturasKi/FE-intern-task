@@ -1,24 +1,49 @@
-// fetch photos and map list in column
+// FETCH PHOTOS AND MAP LIST IN COLUMN
 fetch('https://picsum.photos/v2/list')
 .then(res => res.json())
 .then(data => {
-    let data1 = '';
+    // console.log(data);
+    let dataList = '';
     data.map((values) => {
-        data1 += `<div class="card">
-                    <img src="${values.download_url}" alt="img" onclick="pickPhoto(this)">
-                </div>
-                <script>
-                    function pickPhoto(smallImg) {
-                        let fullImg = document.getElementById('imgBox');
-                        fullImg.src = smallImg.src;
-                    }
-                </script>`
-    })
-    document.getElementById('cards').innerHTML = data1;
+        dataList += `<div class="card">
+                        <img src="${values.download_url}" alt="img" onclick="pickPhoto(this)">
+                    </div>`;
+})
+    document.getElementById('cards').innerHTML = dataList;
 })
 .catch(error => console.log('ERROR'));
 
-// Get elements
+// ENLARGE PICKED PHOTO FROM LIST
+function pickPhoto(smallImg) {
+    let dataInfo = '';
+    let fullImg = document.getElementById('imgBox');
+    fullImg.src = smallImg.src;
+
+    fetch('https://picsum.photos/v2/list')
+    .then(res => res.json())
+    .then(data => {
+        for (let i = 0; i < data.length; i++) {
+                if (fullImg.src === data[i].download_url) {
+                    dataInfo = `
+                    <div">Author: ${data[i].author}</div>
+                    <div">Width and height: ${data[i].width}x${data[i].height}</div>
+                    `
+                    document.getElementById('info').innerHTML = dataInfo;
+                }
+        }
+    })
+}
+
+
+
+// function pickPhoto(smallImg) {
+//     let fullImg = document.getElementById('imgBox');
+//     fullImg.src = smallImg.src;
+//     fullImg = `<img class="img" src="${fullImg.src}" alt="#">`;
+//     document.getElementById('imgBox').innerHTML = fullImg;
+// }
+
+// IMAGE FILTERS
 let slider = document.getElementById('slider');
 let output = document.getElementById('value');
 let img = document.getElementById('imgBox');
@@ -43,8 +68,3 @@ function imageFilters() {
         img.style.filter = 'grayscale(0%)' + blurValue;
     }
 };
-
-function pickPhoto(smallImg) {
-    let fullImg = document.getElementById('imgBox');
-    fullImg.src = smallImg.src;
-}
