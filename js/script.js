@@ -40,7 +40,9 @@ function pickPhoto(smallImg) {
                 </div>
                 `
                 document.getElementById('info').innerHTML = dataInfo;
+                console.log(dataInfo);
             }
+            
         }
     })
 }
@@ -77,3 +79,41 @@ function imageFilters() {
         img.style.filter = 'grayscale(0%)' + blurValue;
     }
 };
+
+// PAGINATION
+let ul = document.querySelector('ul');
+let allPages = 30;
+
+function element(allPages, page) {
+    let li = '';
+    let beforePages = page - 1;
+    let afterPages = page + 1;
+    let liActive;
+
+    if(page > 1) {
+        li += `<li class="btn" onclick="element(allPages, ${page-1})"><i class="fa fa-angle-left"></i></li>`
+    }
+
+    for (let pageLength = beforePages; pageLength <= afterPages; pageLength++) {
+
+        if(pageLength > allPages) {
+            continue;
+        }
+        if(pageLength === 0) {
+            pageLength = pageLength + 1;
+        }
+        if(page === pageLength) {
+            liActive = 'active';
+        } else {
+            liActive = '';
+        }
+        li += `<li class="num ${liActive}" onclick="element(allPages, ${page+1})"><span>${pageLength}</span></li>`
+    }
+    if(page < allPages) {
+        li += `<li class="btn" onclick="element(allPages, ${page+1})"><i class="fa fa-angle-right"></i></li>`
+    }
+    document.getElementById('pagination').innerHTML = li;
+    console.log(li);
+}
+
+element(allPages, 1)
