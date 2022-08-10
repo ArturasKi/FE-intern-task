@@ -2,8 +2,14 @@
 fetch('https://picsum.photos/v2/list')
 .then(res => res.json())
 .then(data => {
-    // console.log(data);
     let dataList = '';
+    let dataInfoInitial = `
+        <div class="info">
+            <p>Author: <b>${data[0].author}</b></p>
+            <p>Width and height: <b>${data[0].width}x${data[0].height}</b></p>
+        </div>
+        `;
+        document.getElementById('info').innerHTML = dataInfoInitial;
     data.map((values) => {
         dataList += `<div class="card">
                         <img src="${values.download_url}" alt="img" onclick="pickPhoto(this)">
@@ -15,26 +21,29 @@ fetch('https://picsum.photos/v2/list')
 
 // ENLARGE PICKED PHOTO FROM LIST
 function pickPhoto(smallImg) {
-    let dataInfo = '';
+    
     let fullImg = document.getElementById('imgBox');
     fullImg.src = smallImg.src;
 
     fetch('https://picsum.photos/v2/list')
     .then(res => res.json())
     .then(data => {
+        let dataInfo = '';
+        document.getElementById('info').innerHTML = dataInfo;
+
         for (let i = 0; i < data.length; i++) {
-                if (fullImg.src === data[i].download_url) {
-                    dataInfo = `
-                    <div">Author: ${data[i].author}</div>
-                    <div">Width and height: ${data[i].width}x${data[i].height}</div>
-                    `
-                    document.getElementById('info').innerHTML = dataInfo;
-                }
+            if (fullImg.src === data[i].download_url) {
+                dataInfo = `
+                <div class="info">
+                    <p>Author: <b>${data[i].author}</b></p>
+                    <p>Width and height: <b>${data[i].width}x${data[i].height}</b></p>
+                </div>
+                `
+                document.getElementById('info').innerHTML = dataInfo;
+            }
         }
     })
 }
-
-
 
 // function pickPhoto(smallImg) {
 //     let fullImg = document.getElementById('imgBox');

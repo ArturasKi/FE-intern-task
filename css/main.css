@@ -96,8 +96,8 @@ main {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
-    height: 87%;
+    padding: 100px 10px 40px 10px;
+    height: 90%;
     margin-bottom: 20px;
     background-color: palevioletred;
     border-radius: 20px;
@@ -108,19 +108,19 @@ main {
     justify-content: space-around;
     align-items: center;
     margin: 0 10%;
-    height: 10%;
+    height: 7%;
     padding: 20px;
     background-color: palevioletred;
     border-radius: 20px;
+    background: #d3d3d3;
 }
 
 .slider {
     -webkit-appearance: none;
     appearance: none;
-    /* width: 100%; */
-    margin-top: 6px;
+    margin-top: 7px;
     height: 5px;
-    background: #d3d3d3;
+    background: palevioletred;
 }
 
 .slider::-webkit-slider-thumb {
@@ -145,7 +145,14 @@ main {
   }
 
 label, span {
-    font-style: italic;
     font-weight: 900;
     margin: 10px;
+}
+
+.info {
+    margin-top: 10px;
+    padding: 5px 50px;
+    border-radius: 10px;
+    background: #adb3bd;
+    width: 100%;
 }
