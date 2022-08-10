@@ -21,12 +21,13 @@ main {
     position: fixed;
     top: 0;
     left: 0;
-    width: 18%;
+    min-width: 280px;
     height: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: #adb3bd;
     opacity: 1;
     overflow-y: scroll;
+    z-index: 99;
 }
 
 .rightside {
@@ -35,7 +36,8 @@ main {
     right: 0;
     background-color: #505764;
     height: 100%;
-    width: 82%;
+    margin-left: 280px;
+    min-width: calc(100% - 280px);
 }
 
 .card {
@@ -54,14 +56,13 @@ main {
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     opacity: 1;
 }
 
 .card img {
     height: 200px;
     width: 200px;
-    border-radius: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -80,14 +81,14 @@ main {
 
 .left-col {
     padding: 20px;
-    width: 100%;
+    min-width: 260px;
     height: 100%;
 }
 
 .right-col {
-    padding: 20px 120px;
-    width: 100%;
+    padding: 20px;
     height: 100%;
+    width: 100%;
 }
 
 .photo-container {
@@ -96,8 +97,9 @@ main {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 100px 10px 40px 10px;
+    padding: 40px 10px 100px 10px;
     height: 90%;
+    width: 100%;
     margin-bottom: 20px;
     background-color: palevioletred;
     border-radius: 20px;
@@ -150,9 +152,69 @@ label, span {
 }
 
 .info {
-    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 5px 50px;
     border-radius: 10px;
     background: #adb3bd;
     width: 100%;
+}
+
+@media (max-width: 800px) {
+    .leftside {
+        min-width: 120px;
+    }
+    .rightside {
+        margin-left: 280px;
+        min-width: calc(100% - 176px);
+    }
+    .left-col {
+        min-width: 120px;
+        height: 100%;
+    }
+    .right-col {
+        min-width: 100%;
+        height: 100%;
+    }
+    .card {
+        height: 100px;
+        width: 100px;
+        border-radius: 10px;
+    }
+    .card img {
+        height: 100px;
+        width: 100px;
+        border-radius: 10px;
+    }
+    .photo-container {
+        height: 80%;
+    }
+    .filter-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 17%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .filter-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 17%;
+        padding: 5px;
+    }
+    .filter-container > div > label, span {
+        font-size: 12px;
+        text-align: center;
+        align-items: center;
+    }
+    .slider {
+        width: 80px;
+        margin-bottom: 5px;
+    }
+    .slider::-webkit-slider-thumb {
+        padding-bottom: 5px;
+      }
 }

@@ -6,7 +6,7 @@ fetch('https://picsum.photos/v2/list')
     let dataInfoInitial = `
         <div class="info">
             <p>Author: <b>${data[0].author}</b></p>
-            <p>Width and height: <b>${data[0].width}x${data[0].height}</b></p>
+            <p>Dimensions: <b>${data[0].width} x ${data[0].height}</b></p>
         </div>
         `;
         document.getElementById('info').innerHTML = dataInfoInitial;
@@ -36,7 +36,7 @@ function pickPhoto(smallImg) {
                 dataInfo = `
                 <div class="info">
                     <p>Author: <b>${data[i].author}</b></p>
-                    <p>Width and height: <b>${data[i].width}x${data[i].height}</b></p>
+                    <p>Dimensions: <b>${data[i].width} x ${data[i].height}</b></p>
                 </div>
                 `
                 document.getElementById('info').innerHTML = dataInfo;
