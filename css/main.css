@@ -165,11 +165,12 @@ label, span {
     }
     .rightside {
         margin-left: 280px;
-        min-width: calc(100% - 176px);
+        min-width: calc(100% - 146px);
     }
     .left-col {
         min-width: 120px;
         height: 100%;
+        padding: 10px;
     }
     .right-col {
         min-width: 100%;
@@ -179,6 +180,7 @@ label, span {
         height: 100px;
         width: 100px;
         border-radius: 10px;
+        margin: 0 5px 10px 5px;
     }
     .card img {
         height: 100px;
@@ -203,10 +205,10 @@ label, span {
         flex-direction: column;
         align-items: center;
         height: 17%;
-        padding: 5px;
+        padding: 0;
     }
     .filter-container > div > label, span {
-        font-size: 12px;
+        font-size: 11px;
         text-align: center;
         align-items: center;
     }
@@ -214,7 +216,12 @@ label, span {
         width: 80px;
         margin-bottom: 5px;
     }
-    .slider::-webkit-slider-thumb {
-        padding-bottom: 5px;
-      }
+    .info {
+        padding: 10px;
+        margin: 0;
+        border-radius: 10px;
+        background: #adb3bd;
+        width: 100%;
+        font-size: 11px;
+    }
 }
