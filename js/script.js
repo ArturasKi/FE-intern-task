@@ -32,22 +32,19 @@ fetch("https://picsum.photos/v2/list")
   .catch((error) => console.log("ERROR"));
 
 function pickPhoto(smallImg) {
+  let dataInfo = "";
   let fullImg = document.getElementById("imgBox");
   fullImg.src = smallImg.src;
-  let dataInfo = "";
-  document.getElementById("info").innerHTML = dataInfo;
-
-  for (let i = 0; i < window.DATA.length; i++) {
-    if (fullImg.src === window.DATA[i].download_url) {
-      dataInfo = `
+  let galleryItem = window.DATA.find(
+    (item) => item.download_url === fullImg.src
+  );
+  dataInfo = `
             <div class="info">
-                <p>Author: <b>${window.DATA[i].author}</b></p>
-                <p>Dimensions: <b>${window.DATA[i].width} x ${window.DATA[i].height}</b></p>
+                <p>Author: <b>${galleryItem.author}</b></p>
+                <p>Dimensions: <b>${galleryItem.width} x ${galleryItem.height}</b></p>
             </div>
             `;
-      document.getElementById("info").innerHTML = dataInfo;
-    }
-  }
+  document.getElementById("info").innerHTML = dataInfo;
 }
 
 output.innerHTML = slider.value;

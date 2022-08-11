@@ -89,7 +89,7 @@ main {
 .right-col {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: center;
     padding: 20px;
     height: 100%;
     width: 100%;
@@ -105,20 +105,25 @@ main {
     height: 90%;
     width: 100%;
     margin-bottom: 20px;
-    /* background-color: palevioletred; */
-    border-radius: 20px;
 }
 
 .filter-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin: 0 10%;
-    height: 7%;
-    padding: 20px;
-    background-color: palevioletred;
+    height: 10%;
+    width: 100%;
+    padding: 10px;
     border-radius: 20px;
-    background: #d3d3d3;
+    color: #fff;
+}
+
+.filter-container .filter-row {
+    width: 100%;
+}
+
+.filter-container .filter-row div {
+    margin-bottom: 10px;
 }
 
 .slider {
@@ -126,7 +131,7 @@ main {
     appearance: none;
     margin-top: 7px;
     height: 5px;
-    background: palevioletred;
+    background: #d3d3d3;
 }
 
 .slider::-webkit-slider-thumb {
@@ -177,10 +182,9 @@ main {
     list-style-type: none;
     text-align: center;
     cursor: pointer;
-    background-color: #d3d3d3;
+    background-color: #adb3bd;
     border-radius: 50%;
     margin: 5px;
-    /* padding: 10px; */
 }
 
 .pagination ul li.num {
@@ -189,14 +193,22 @@ main {
     width: 40px;
 }
 
-.pagination ul li.num span, i {
+.pagination ul li.num span {
     position: absolute;
     width: 100%;
     right: 0;
     top: 10px;
     text-align: center;
     align-items: center;
-    font-weight: lighter;
+    font-weight: bold;
+}
+
+.pagination ul li.btn i {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 5px;
+    font-size: 24px;
 }
 
 .pagination ul li.active {
@@ -240,13 +252,6 @@ main {
     .photo-container {
         height: 80%;
     }
-    .filter-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 17%;
-        padding: 20px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -255,16 +260,19 @@ main {
         flex-direction: column;
         align-items: center;
         padding: 0;
-        margin: 0;
+        margin: 5px;
     }
-    .filter-container > div > label {
-        font-size: 11px;
+    .filter-container div {
+        width: 100%;
+    }
+    .filter-container {
+        font-size: 12px;
     }
     .photo-container {
         padding: 0;
     }
     .slider {
-        width: 40%;
+        width: 100px;
     }
     .info {
         padding: 10px;
@@ -296,5 +304,6 @@ main {
     .pagination ul li.btn i {
         top: 4px;
         left: 0;
+        font-size: 18px;
     }
 }
