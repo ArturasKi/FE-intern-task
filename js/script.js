@@ -22,7 +22,7 @@ fetch("https://picsum.photos/v2/list")
         </div>
         `;
     let photoInitial = `
-            <img class="img" id="imgBox" src="${data[0].download_url}" alt="#" >
+            <img class="img" id="imgBox" src="${data[0].download_url}" alt="#" onContextMenu="return false;">
         `;
     document.getElementById("info").innerHTML = dataInfoInitial;
     document.getElementById("photo").innerHTML = photoInitial;
