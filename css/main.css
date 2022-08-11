@@ -150,8 +150,11 @@ main {
     object-fit: contain;
   }
 
-label, span {
-    font-weight: 900;
+.filter-container div label {
+    margin: 10px;
+}
+
+.filter-container div span {
     margin: 10px;
 }
 
@@ -161,6 +164,49 @@ label, span {
     border-radius: 10px;
     background: #adb3bd;
     width: 100%;
+}
+
+.pagination ul {
+    position: relative;
+    display: flex;
+    padding: 15px;
+}
+
+.pagination ul li {
+    position: relative;
+    list-style-type: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    margin: 5px;
+    /* padding: 10px; */
+}
+
+.pagination ul li.num {
+    position: relative;
+    height: 40px;
+    width: 40px;
+}
+
+.pagination ul li.num span, i {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 10px;
+    text-align: center;
+    align-items: center;
+    font-weight: lighter;
+}
+
+.pagination ul li.active {
+    background-color: #fff;
+}
+
+.pagination ul li.btn {
+    height: 35px;
+    width: 35px;
+    margin-top: 8px;
 }
 
 @media (max-width: 800px) {
@@ -208,58 +254,47 @@ label, span {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 17%;
+        padding: 0;
+        margin: 0;
+    }
+    .filter-container > div > label {
+        font-size: 11px;
+    }
+    .photo-container {
         padding: 0;
     }
-    .filter-container > div > label, span {
-        font-size: 11px;
-        text-align: center;
-        align-items: center;
-    }
     .slider {
-        width: 80px;
-        margin-bottom: 5px;
+        width: 40%;
     }
     .info {
         padding: 10px;
-        margin: 0;
-        border-radius: 10px;
-        background: #adb3bd;
-        width: 100%;
-        font-size: 11px;
+        font-size: 12px;
     }
-}
-
-.pagination ul {
-    display: flex;
-    padding: 15px;
-}
-
-.pagination ul li {
-    list-style-type: none;
-    text-align: center;
-    cursor: pointer;
-    background-color: #d3d3d3;
-    border-radius: 50%;
-    margin: 5px;
-    padding: 10px;
-}
-
-.pagination ul li.num {
-    height: 40px;
-    width: 40px;
-}
-
-.pagination ul li.num span {
-    margin-left: 3px;
-}
-
-.pagination ul li.active {
-    background-color: #fff;
-}
-
-.pagination ul li.btn {
-    height: 35px;
-    width: 35px;
-    margin-top: 8px;
+    .pagination {
+        margin-top: 20px;
+    }
+    .pagination ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+    .pagination ul li {
+        margin: 3px;
+    }
+    .pagination ul li.num {
+        height: 35px;
+        width: 35px;
+    }
+    .pagination ul li.num span {
+        top: 7px;
+        left: 0;
+    }
+    .pagination ul li.btn {
+        height: 25px;
+        width: 25px;
+    }
+    .pagination ul li.btn i {
+        top: 4px;
+        left: 0;
+    }
 }
