@@ -4,7 +4,7 @@ let allPages;
 let slider = document.getElementById("slider");
 let output = document.getElementById("value");
 let pagination = document.getElementById("pagination");
-let img = document.getElementById("imgBox");
+let img = document.getElementById("photo");
 let checkboxGray = document.getElementById("check");
 let ul = document.querySelector("ul");
 
@@ -21,7 +21,12 @@ fetch("https://picsum.photos/v2/list")
             <p>Dimensions: <b>${data[0].width} x ${data[0].height}</b></p>
         </div>
         `;
+    let photoInitial = `
+            <img class="img" id="imgBox" src="${data[0].download_url}" alt="#" >
+        `;
     document.getElementById("info").innerHTML = dataInfoInitial;
+    document.getElementById("photo").innerHTML = photoInitial;
+
     data.map((values) => {
       dataList += `<div class="card">
                         <img src="${values.download_url}" alt="img" onClick="pickPhoto(this)">
